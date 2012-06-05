@@ -4,18 +4,19 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "tribune-super_awesome_resource_serializer"
+  s.name = "super_awesome_resource_serializer"
   s.version = "1.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Brian Durand"]
-  s.date = "2012-05-31"
+  s.date = "2012-06-05"
   s.description = "Quickly create custom serializations for resources rather than relying on the generated ones."
   s.email = ["bdurand@tribune.com"]
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
+    "License.txt",
     "README.rdoc",
     "Rakefile",
     "lib/super_awesome_resource_serializer.rb",
