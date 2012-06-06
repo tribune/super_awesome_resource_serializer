@@ -22,7 +22,7 @@ begin
     gem.summary = %Q{Quickly create custom serializations for resources}
     gem.description = %Q{Quickly create custom serializations for resources rather than relying on the generated ones.}
     gem.authors = ["Brian Durand"]
-    gem.email = ["bdurand@tribune.com"]
+    gem.email = ["mdobrota@tribune.com", "bdurand@tribune.com"]
     gem.files = FileList["lib/**/*", "spec/**/*", "README.rdoc", "Rakefile", "License.txt"].to_a
     gem.has_rdoc = true
     gem.rdoc_options << '--line-numbers' << '--inline-source' << '--main' << 'README.rdoc'
