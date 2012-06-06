@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Brian Durand"]
   s.date = "2012-06-06"
   s.description = "Quickly create custom serializations for resources rather than relying on the generated ones."
-  s.email = ["mdobrota@tribune.com", "bdurand@tribune.com"]
+  s.email = ["mdobrota@tribune.com", "ddpr@tribune.com"]
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
