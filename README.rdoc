@@ -1,2 +1,46 @@
 = Super Awesome Resource Serializer
 
+This gem provides flexible serialization to Ruby objects.
+
+== Usage
+
+Create a serializer by inheriting from +SuperAwesomeResourceSerializer+. Define the serialized fields using +serialize+. This method accepts the following options:
+
+* +:element+ - The name of the field in the serialized output. This can be used to give a object a prettier name on output.
+* +:getter+ - The getter method to get the field value.
+* +:setter+ - The setter method to set the field value.
+* +:exclude+ - Indicate that this field should be excluded unless specifically asked for. Values can be +:getter+, +:setter+, or +true+ (for both).
+    
+By default, getters and setters will call the field accessor on the serializer (if it is defined) or on the object.
+This can be overridden by specifying a different method name to call, or a proc that will be yielded to with the object
+(and value for a setter). Finally, getters and setters can be disabled by setting them to +false+.
+
+Pass the object that needs to be serialized as the first argument to the serializer initializer. The second argument is an optional options hash. The following options can be passed in:
+
+Note: All of the following options accept a field or an array of fields. 
+* +:include+ - Forces the specified fields to be serialized.
+* +:exclude+ - Forces the specified fields to be excluded from the serialization.
+* +:only+ - Only the specified fields are serialized.
+
+The serialization is done by invoking one of the following methods on the serializer object:
+* +to_hash+
+* +to_json+
+* +to_yaml+
+
+== Example
+ > require 'ostruct' # only needed for the example
+  => true
+ > obj = OpenStruct.new(:name => "Nick", :location => "unknown")
+  => #<OpenStruct location="unknown", name="Nick"> 
+ > class Serializer < SuperAwesomeResourceSerializer
+ >   serialize :name
+ >   serialize :location
+ > end
+  => ...
+ > s = Serializer.new(obj)
+  => ...
+ > s.to_hash
+  => {"name"=>"Nick", "location"=>"unknown"}
+ > puts s.to_json
+ {"name":"Nick","location":"unknown"}
+  => nil 
